@@ -1,4 +1,4 @@
-import './showitem.scss';
+import './showItem.scss';
 
 function ShowItem({ image, rate, desc }) {
   return (
