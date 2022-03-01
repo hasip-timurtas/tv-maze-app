@@ -2,7 +2,9 @@ import './showItem.scss';
 
 function ShowItem({ image, rate, desc }) {
   return (
-    <header>ShowItem</header>
+    <div name="show-item">
+      <img src={image} alt={desc} />
+    </div>
   )
 }
 

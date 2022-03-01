@@ -8,5 +8,12 @@
 
   .show-content {
     padding-top: 130px;
+
+    .show-list {
+      padding-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
   }
 }

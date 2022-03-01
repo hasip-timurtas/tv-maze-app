@@ -1,19 +1,17 @@
 import { useState, useEffect } from 'react';
-import apiClient from '../../api'
+import apiClient from '../../api';
+import ShowItem from '../../componenets/showItem';
 import './home.scss';
 
 function Home() {
-
   const [shows, setShows] = useState([]);
 
   useEffect(() => {
-
     apiClient.getTvShows().then(result => {
       setShows(result.data);
-    })
-
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    });
   }, []);
+
   return (
     <div className="Home">
       <p className="description">
@@ -25,7 +23,11 @@ function Home() {
         <h2>Last Added Shows</h2>
 
         <div className="show-list">
-
+          {
+            shows.length ?
+              shows.map(({ id, show }) => <ShowItem key={id} image={show.image.medium} />)
+              : <div>There is no shows yet.</div>
+          }
         </div>
       </div>
     </div>
