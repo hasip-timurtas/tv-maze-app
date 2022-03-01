@@ -25,7 +25,13 @@ function Home() {
         <div className="show-list">
           {
             shows.length ?
-              shows.map(({ id, show }) => <ShowItem key={id} image={show.image.medium} />)
+              shows.map(({ id, show }) =>
+                <ShowItem
+                  key={id}
+                  image={show.image.medium}
+                  name={show.name}
+                  rating={show.rating.average}
+                />)
               : <div>There is no shows yet.</div>
           }
         </div>
