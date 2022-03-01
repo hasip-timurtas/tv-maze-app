@@ -20,7 +20,7 @@ function Home() {
       </p>
 
       <div className="show-content">
-        <h2>Last Added Shows</h2>
+        <h2 className="list-header">Last Added Shows</h2>
 
         <div className="show-list">
           {
