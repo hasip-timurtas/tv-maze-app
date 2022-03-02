@@ -1,7 +1,14 @@
+@import '../../styles/_mixins.scss';
+
 .show-item {
   width: 165px;
   height: 340px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+
+  @include respond(mobile) {
+    width: 140px;
+    height: 270px;
+  }
 }

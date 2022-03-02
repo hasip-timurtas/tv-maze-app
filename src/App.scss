@@ -1,3 +1,5 @@
+@import './styles/_mixins.scss';
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -14,6 +16,10 @@ body {
   height: 100vh;
   background-image: linear-gradient(180deg, #EBEBEB 580px, #fff 50%);
   background-repeat: no-repeat;
+
+  @include respond(mobile) {
+    background-image: linear-gradient(180deg, #EBEBEB 250px, #fff 28%);
+  }
 }
 
 main {

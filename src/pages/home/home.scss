@@ -1,13 +1,23 @@
-.Home {
+@import '../../styles/_mixins.scss';
 
+.Home {
   .description {
     max-width: 900px;
     font-size: 30px;
-    color: #8B8B8B
+    color: #8B8B8B;
+    line-height: 25px;
+
+    @include respond(mobile) {
+      font-size: 20px;
+    }
   }
 
   .show-content {
     padding-top: 130px;
+
+    @include respond(mobile) {
+      padding-top: 100px;
+    }
 
     .list-header {
       font-size: 30px;
@@ -19,6 +29,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 50px;
+      justify-content: space-evenly;
     }
   }
 }

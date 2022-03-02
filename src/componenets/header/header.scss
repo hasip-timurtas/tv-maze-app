@@ -1,6 +1,14 @@
+@import '../../styles/_mixins.scss';
+
 header {
   padding-top: 90px;
   padding-bottom: 60px;
   font-size: 30px;
   font-weight: bold;
+
+  @include respond(mobile) {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 20px;
+  }
 }
