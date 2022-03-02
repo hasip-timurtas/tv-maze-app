@@ -28,11 +28,12 @@ function Home() {
               shows.map(({ id, show }) =>
                 <ShowItem
                   key={id}
+                  id={show.id}
                   image={show.image.medium}
                   name={show.name}
                   rating={show.rating.average}
                 />)
-              : <div>There is no shows yet.</div>
+              : <div>There are no shows yet.</div>
           }
         </div>
       </div>
