@@ -1,18 +1,36 @@
+@import '../../styles/_mixins.scss';
+
 .show-info-up {
   display:flex;
   margin-top: 30px;
 
+  @include respond(mobile) {
+    display: block;
+  }
+
   .show-image img {
     width: 272px;
-    height: 400px;
+
+    @include respond(mobile) {
+      width: 100%;
+    }
   }
   
   .show-details {
     padding: 50px;
 
+    @include respond(mobile) {
+      padding: 0;
+      width: 100%;
+    }
+
     .rating {
       display: flex;
 
+      @include respond(mobile) {
+        padding: 20px 0px;
+      }
+      
       &-point {
         padding: 10px;
       }
@@ -21,10 +39,18 @@
     .show-title {
       font-size: 50px;
       font-weight: normal;
+
+      @include respond(mobile) {
+        font-size: 30px;
+      }
     }
 
     .show-description {
-      // todo design show description
+      padding-top: 15px;
+
+      @include respond(mobile) {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -34,22 +60,56 @@
   gap: 50px;
   display: flex;
 
+  @include respond(mobile) {
+    display: block;
+  }
+
   .show-info, 
   .show-starring {
     width: 50%;
+
+    @include respond(mobile) {
+      width: 100%;
+    }
   }
 
   .show-info {
 
+    &-detail {
+      @include respond(mobile) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      hr {
+        @include respond(mobile) {
+          display: none;
+        }
+      }
+    }
+    
+    
     &-title {
       font-size: 30px;
       padding-bottom: 40px;
+
+      @include respond(mobile) {
+        padding: 20px 0;
+
+      }
     }
 
-    &-row{
+    &-row {
       padding: 30px 0;
       display: flex;
       gap: 50px;
+
+      @include respond(mobile) {
+        flex-direction: column;
+        width: 50%;
+        gap: 5px;
+        padding: 20px 0;
+      }
 
       &-title {
         width: 200px;
@@ -62,8 +122,40 @@
       .icon {
         font-size: 20px;
         color: #C9C9C9;
+
+        @include respond(mobile) {
+          font-size: 60px;
+        }
       }
     }
   }
 
+  .starring {
+    .show-info-row {
+      @include respond(mobile) {
+        width: 100%;
+      }
+      .cover {
+        width: 220px;
+        @include respond(mobile) {
+          width: 100%;
+        }
+      }
+
+      .icon {
+        padding-right: 10px;
+
+        @include respond(mobile) {
+          position: absolute;
+        }
+      }
+
+      &-title, 
+      &-value {
+        @include respond(mobile) {
+          padding-left: 70px;
+        }
+      }
+    }
+  }
 }
