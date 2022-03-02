@@ -13,7 +13,10 @@ export default {
   getTvShows() {
     return apiClient.get("schedule");
   },
-  getShowDetail(id) {
-    return apiClient.get("shows/" + id);
+  getShowDetail(showId) {
+    return apiClient.get("shows/" + showId);
+  },
+  getCasts(showId) {
+    return apiClient.get(`shows/${showId}/cast`);
   }
 };

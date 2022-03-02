@@ -4,16 +4,4 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-
-  .review-stars {
-    padding: 10px 0;
-
-    .fa-star {
-      color: #CBCBCB;
-    }
-  
-    .checked {
-      color: #878787;
-    }
-  }
 }
