@@ -10,9 +10,11 @@
 
   .show-image img {
     width: 272px;
+    height: 400px;
 
     @include respond(mobile) {
       width: 100%;
+      height: inherit;
     }
   }
   

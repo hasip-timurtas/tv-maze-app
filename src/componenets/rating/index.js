@@ -1,4 +1,4 @@
-import './starsRating.scss';
+import './rating.scss';
 
 function StarsRating({ rating }) {
   return (

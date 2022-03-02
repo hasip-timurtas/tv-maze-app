@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Show from './';
 
-test('renders learn react link', () => {
-  render(<Show />);
-  const linkElement = screen.getByText(/show/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Show page Tests', () => {
+  test('renders show page components and finds Show element', () => {
+    const { container } = render(<Show />)
+    expect(container.getElementsByClassName('Show').length).toBe(1);
+  });
 });

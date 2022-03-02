@@ -1,8 +1,11 @@
 import { render } from '@testing-library/react';
+import { MemoryRouter as Router } from 'react-router-dom';
 import ShowItem from './';
 
-test('renders learn react link', () => {
-  const { container } = render(<ShowItem />)
-  expect(container.getElementsByClassName('show-item').length).toBe(1);
+describe('Show Item Tests', () => {
+  test('renders showItem component and find show-item element', () => {
+    const { container } = render(<Router><ShowItem /></Router>)
+    expect(container.getElementsByClassName('show-item').length).toBe(1);
+  });
 });
 

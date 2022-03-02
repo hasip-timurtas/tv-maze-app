@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import Home from './';
 
-test('renders learn react link', () => {
-  render(<Home />);
-  const linkElement = screen.getByText(/tv show/i);
-  expect(linkElement).toBeInTheDocument();
+describe('Home Tests', () => {
+  test('renders home component and gets find tv show text', () => {
+    render(<Home />);
+    const linkElement = screen.getByText(/tv show/i);
+    expect(linkElement).toBeInTheDocument();
+  });
 });

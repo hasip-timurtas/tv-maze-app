@@ -15,16 +15,16 @@ function Starring({ showId }) {
   return (
     <div className="starring">
       {casts.length && casts.map(cast =>
-        <>
+        <div key={cast.person.id}>
           <div className="show-info-row">
             <div className="cover">
-              <span class="icon fa fa-user-circle"></span>
+              <span className="icon fa fa-user-circle"></span>
               <span className="show-info-row-title">{cast.person.name}</span>
             </div>
             <span className="show-info-row-value">{cast.character.name}</span>
           </div>
           <hr />
-        </>
+        </div>
       )
       }
     </div >
