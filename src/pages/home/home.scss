@@ -16,7 +16,7 @@
     padding-top: 130px;
 
     @include respond(mobile) {
-      padding-top: 100px;
+      padding-top: 120px;
     }
 
     .list-header {
@@ -30,6 +30,19 @@
       flex-wrap: wrap;
       gap: 50px;
       justify-content: space-evenly;
+    }
+
+    .load-more {
+      display: flex;
+      justify-content: center;
+
+      button { 
+        cursor: pointer;
+        width: 200px;
+        border: none;
+        height: 50px;
+        background: #EBEBEB;
+      }
     }
   }
 }

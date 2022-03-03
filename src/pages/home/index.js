@@ -3,14 +3,26 @@ import apiClient from '../../api';
 import ShowItem from '../../componenets/showItem';
 import './home.scss';
 
+const LOAD_AMOUNT = 12;
+
 function Home() {
-  const [shows, setShows] = useState([]);
+  const [allShows, setAllShows] = useState([]);
+  const [loadedShows, setLoadedShows] = useState([]);
 
   useEffect(() => {
     apiClient.getTvShows().then(result => {
-      setShows(result.data);
+      setAllShows(result.data);
     });
   }, []);
+
+  useEffect(() => {
+    loadShows();
+  }, [allShows]);
+
+  const loadShows = () => {
+    const loadedAmount = loadedShows.length;
+    setLoadedShows(allShows.slice(0, loadedAmount + LOAD_AMOUNT));
+  }
 
   return (
     <div className="Home">
@@ -24,8 +36,8 @@ function Home() {
 
         <div className="show-list">
           {
-            shows.length ?
-              shows.map(({ id, show }) =>
+            loadedShows.length ?
+              loadedShows.map(({ id, show }) =>
                 <ShowItem
                   key={id}
                   id={show.id}
@@ -35,9 +47,14 @@ function Home() {
                 />)
               : <div>There are no shows yet.</div>
           }
+
         </div>
+        {loadedShows.length && loadedShows.length !== allShows.length &&
+          < div className="load-more">
+            <button onClick={loadShows}> Load More</button>
+          </div>}
       </div>
-    </div>
+    </div >
   );
 }
 
