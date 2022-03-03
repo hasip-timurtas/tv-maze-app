@@ -50,8 +50,8 @@ function Home() {
 
         </div>
         {loadedShows.length && loadedShows.length !== allShows.length &&
-          < div className="load-more">
-            <button onClick={loadShows}> Load More</button>
+          <div className="load-more">
+            <button onClick={loadShows}>Load More</button>
           </div>}
       </div>
     </div >
