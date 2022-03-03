@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import DOMPurify from "dompurify";
 import StarsRating from '../../componenets/rating';
 import apiClient from '../../api';
 import Starring from '../../componenets/starring';
