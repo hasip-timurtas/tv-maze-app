@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
+import DOMPurify from "dompurify";
 import StarsRating from '../../componenets/rating';
 import apiClient from '../../api';
 import Starring from '../../componenets/starring';
+import { removeTags } from '../../utils/removeTags'
 import './show.scss';
 
 function Show() {
@@ -38,8 +40,7 @@ function Show() {
               </div>
 
               <h1 className="show-title">{show.name}</h1>
-              <div className="show-description">{show.summary}</div>
-              {/* <div className="show-description" dangerouslySetInnerHTML={{ __html: show.summary }}> </div> */}
+              <div className="show-description">{removeTags(show.summary)}</div>
             </div>
           </div>
           <div className="show-info-down">
